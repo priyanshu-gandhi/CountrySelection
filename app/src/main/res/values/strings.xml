@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CountrySelection</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="alerts">Alerts</string>
+    <string name="places">Places</string>
+    <string name="shots">Shots</string>
+    <string name="friends">Friends</string>
+    <string name="select_country">Select Country</string>
+    <string name="edit">Edit</string>
+    <string name="search_hint">Search</string>
+    <string name="selected">Selected</string>
+    <string name="confirm">Confirm</string>
+    
+    <!-- Placeholders -->
+    <string name="placeholder_name">Lucile Barrett</string>
+    <string name="placeholder_city">New York, NY</string>
+    <string name="placeholder_country">India (+91)</string>
+    <string name="placeholder_country_uk">United Kingdom</string>
+    <string name="placeholder_code_uk">(+44)</string>
+</resources>

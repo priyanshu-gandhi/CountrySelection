@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CountrySelectionFragment">
+
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="@dimen/icon_size_19"
+        android:layout_height="@dimen/icon_size_16"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_27"
+        android:src="@drawable/arrow"/>
+
+    <TextView
+        android:id="@+id/country_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_country"
+        android:layout_marginTop="@dimen/margin_24"
+        style="@style/MontserratMedium"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/margin_24"
+        app:layout_constraintLeft_toRightOf="@+id/back_button"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginEnd="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_16"
+        app:layout_constraintTop_toBottomOf="@id/country_heading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:startIconDrawable="@drawable/outline_search_24"
+        app:startIconTint="@color/grey"
+        app:boxBackgroundMode="outline"
+        app:hintEnabled="false"
+        app:boxCornerRadiusTopStart="@dimen/radius_8"
+        app:boxCornerRadiusBottomStart="@dimen/radius_8"
+        app:boxCornerRadiusTopEnd="@dimen/radius_8"
+        app:boxCornerRadiusBottomEnd="@dimen/radius_8">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/search_hint"
+            android:paddingEnd="@dimen/padding_12"
+            android:focusable="false"
+            android:cursorVisible="false"
+            android:drawablePadding="@dimen/padding_16"
+            android:textColor="@color/bg_1"
+            android:inputType="text"
+            style="@style/MontserratRegular"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/selected_country_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_4"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/margin_24"
+        android:layout_marginHorizontal="@dimen/margin_18"
+        android:padding="@dimen/padding_16"
+        app:layout_constraintTop_toBottomOf="@id/search_layout">
+
+        <ImageView
+            android:id="@+id/selected_country_image"
+            android:layout_width="@dimen/icon_size_32"
+            android:layout_height="@dimen/icon_size_32"
+            android:src="@color/bg_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/selected_country_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:text="@string/placeholder_country"
+            android:textColor="@color/black_2"
+            style="@style/MontserratMedium"
+            app:layout_constraintStart_toEndOf="@id/selected_country_image"
+            app:layout_constraintTop_toTopOf="parent"
+            android:maxLines="1"
+            android:maxEms="10"
+            android:ellipsize="end"
+            app:layout_constraintRight_toLeftOf="@id/selected_txt"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/selected_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selected"
+            android:textColor="@color/black_2"
+            style="@style/MontserratMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/margin_18"
+        android:layout_marginTop="@dimen/margin_16"
+        app:layout_constraintTop_toBottomOf="@id/selected_country_header"
+        app:layout_constraintBottom_toTopOf="@id/btnConfirm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recycler_view"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_marginHorizontal="@dimen/margin_18"
+       android:layout_marginVertical="@dimen/margin_24"
+       tools:listitem="@layout/item_country_rv"
+       app:layout_constraintTop_toBottomOf="@id/selected_country_header"
+       />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirm"
+        android:layout_width="@dimen/confirm_btn_width"
+        android:layout_height="@dimen/confirm_btn_height"
+        android:layout_margin="@dimen/margin_24"
+        android:text="@string/confirm"
+        android:visibility="gone"
+        android:backgroundTint="@color/confirm_btn"
+        app:cornerRadius="@dimen/radius_32"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

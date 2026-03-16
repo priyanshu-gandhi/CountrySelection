@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common Spacings -->
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_18">18dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_27">27dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    
+    <dimen name="padding_12">12dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
+    <dimen name="padding_24">24dp</dimen>
+    <dimen name="padding_32">32dp</dimen>
+
+    <!-- UI Components -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="radius_6">6dp</dimen>
+    <dimen name="radius_8">8dp</dimen>
+    <dimen name="radius_32">32dp</dimen>
+    
+    <dimen name="icon_size_16">16dp</dimen>
+    <dimen name="icon_size_19">19dp</dimen>
+    <dimen name="icon_size_22">22dp</dimen>
+    <dimen name="icon_size_24">24dp</dimen>
+    <dimen name="icon_size_32">32dp</dimen>
+    <dimen name="profile_image_size">100dp</dimen>
+    
+    <dimen name="stats_card_height">106dp</dimen>
+    <dimen name="profile_header_height">406dp</dimen>
+    <dimen name="confirm_btn_width">256dp</dimen>
+    <dimen name="confirm_btn_height">64dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+</resources>
